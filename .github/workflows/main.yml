@@ -18,10 +18,6 @@ jobs:
     if: ${{ github.event_name == 'push'  }}
     uses: wgall/cloudrun_node_cicd/.github/workflows/main.yml@dev
     secrets: inherit
-  versioning:
-    if: ${{ github.event_name == 'release' && github.event.release.prerelease }}
-    uses: wgall/cloudrun_node_cicd/.github/workflows/versioning.yml@dev
-    secrets: inherit
   production: 
     if: ${{ github.event_name == 'release' && !github.event.release.prerelease }}
     uses: wgall/cloudrun_node_cicd/.github/workflows/production.yml@dev
