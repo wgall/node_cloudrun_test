@@ -17,7 +17,9 @@ jobs:
   trigger-build:
     if: ${{ github.event_name == 'push'  }}
     uses: wgall/cloudrun_node_cicd/.github/workflows/main.yml@dev
-    secrets: inherit
+    secrets: 
+      sakey: ${{ secrets.SA_CREDENTIALS }}
+      token: ${{ secrets.CLOUDRUN_GIT_TOKEN }}
   production: 
     if: ${{ github.event_name == 'release' && !github.event.release.prerelease }}
     uses: wgall/cloudrun_node_cicd/.github/workflows/production.yml@dev
