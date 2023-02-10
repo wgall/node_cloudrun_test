@@ -6,6 +6,7 @@ on:
     - v*.*.*
     branches:
       - dev 
+      - stage
     paths:
       - '**.*'
  
